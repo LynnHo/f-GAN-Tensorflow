@@ -4,7 +4,7 @@ Tensorflow implementation of f-GAN (NIPS 2016) - [f-GAN: Training Generative Neu
 
 ## TODO
 
-- [ ] make these divergence work
+- [ ] make these divergence work (welcome the suggestions)
     - [ ] ***Kullback-Leibler*** with tricky G loss
     - [ ] ***Reverse-KL*** with tricky G loss
     - [x] ***Pearson-X2*** with tricky G loss
