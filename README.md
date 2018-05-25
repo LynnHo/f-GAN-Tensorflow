@@ -1,6 +1,6 @@
 # <p align="center"> f-GAN </p>
 
-Tensorflow implementation of f-GAN (NIPS 2016) - [f-GAN: Training Generative Neural Samplers Using Variational Divergence Minimization](https://arxiv.org/abs/1606.00709)
+Tensorflow implementation of f-GAN (NIPS 2016) - [f-GAN: Training Generative Neural Samplers Using Variational Divergence Minimization](https://arxiv.org/abs/1606.00709).
 
 ## TODO
 
@@ -41,13 +41,13 @@ Tensorflow implementation of f-GAN (NIPS 2016) - [f-GAN: Training Generative Neu
 - Example of training
     - training
 
-        ```
+        ```console
         CUDA_VISIBLE_DEVICES=0 python train.py --dataset=mnist --divergence=Pearson-X2 --tricky_G
         ```
 
     - tensorboard for loss visualization
 
-        ```
+        ```console
         CUDA_VISIBLE_DEVICES='' tensorboard --logdir ./output/mnist_Pearson-X2_trickyG/summaries --port 6006
         ```
 
