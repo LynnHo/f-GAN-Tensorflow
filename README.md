@@ -17,19 +17,19 @@ Tensorflow implementation of f-GAN (NIPS 2016) - [f-GAN: Training Generative Neu
 
 - Using tricky G loss (see Section 3.2 in the paper)
 
-    Kullback-Leibler | Reverse-KL | Pearson-X2
-    :---: | :---: | :---:
-    <img src="./pics/Kullback-Leibler_trickyG.jpg"> | <img src="./pics/Reverse-KL_trickyG.jpg"> | <img src="./pics/Pearson-X2_trickyG.jpg">
-    **Squared-Hellinger** | **Jensen-Shannon** | **GAN**
-    NaN | <img src="./pics/Jensen-Shannon_trickyG.jpg"> | <img src="./pics/GAN_trickyG.jpg">
+    Kullback-Leibler                                | Reverse-KL                                    | Pearson-X2
+    :---:                                           | :---:                                         | :---:
+    <img src="./pics/Kullback-Leibler_trickyG.jpg"> | <img src="./pics/Reverse-KL_trickyG.jpg">     | <img src="./pics/Pearson-X2_trickyG.jpg">
+    **Squared-Hellinger**                           | **Jensen-Shannon**                            | **GAN**
+    NaN                                             | <img src="./pics/Jensen-Shannon_trickyG.jpg"> | <img src="./pics/GAN_trickyG.jpg">
 
 - Using theoretically correct G loss
 
-    Kullback-Leibler | Reverse-KL | Pearson-X2
-    :---: | :---: | :---:
-    <img src="./pics/Kullback-Leibler_normalG.jpg"> | <img src="./pics/Reverse-KL_normalG.jpg"> | <img src="./pics/Pearson-X2_normalG.jpg">
-    **Squared-Hellinger** | **Jensen-Shannon** | **GAN**
-    NaN | <img src="./pics/Jensen-Shannon_normalG.jpg"> | <img src="./pics/GAN_normalG.jpg">
+    Kullback-Leibler                                | Reverse-KL                                    | Pearson-X2
+    :---:                                           | :---:                                         | :---:
+    <img src="./pics/Kullback-Leibler_normalG.jpg"> | <img src="./pics/Reverse-KL_normalG.jpg">     | <img src="./pics/Pearson-X2_normalG.jpg">
+    **Squared-Hellinger**                           | **Jensen-Shannon**                            | **GAN**
+    NaN                                             | <img src="./pics/Jensen-Shannon_normalG.jpg"> | <img src="./pics/GAN_normalG.jpg">
 
 ## Usage
 
