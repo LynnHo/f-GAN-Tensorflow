@@ -9,7 +9,7 @@ import tensorflow as tf
 import tflib as tl
 
 
-def get_divengence_funcs(divergence):
+def get_divergence_funcs(divergence):
     if divergence == 'Kullback-Leibler':
         def activation_fn(v): return v
 

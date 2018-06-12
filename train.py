@@ -13,19 +13,19 @@ import tflib as tl
 import utils
 
 
-# ****************************************************************************
-# *                                   param                                  *
-# ****************************************************************************
+# ==============================================================================
+# =                                    param                                   =
+# ==============================================================================
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--epoch', dest='epoch', type=int, default=50, help='# of epochs')
-parser.add_argument('--batch_size', dest='batch_size', type=int, default=64, help='batch size')
+parser.add_argument('--epoch', dest='epoch', type=int, default=50)
+parser.add_argument('--batch_size', dest='batch_size', type=int, default=64)
 parser.add_argument('--lr', dest='lr', type=float, default=0.0002, help='learning rate')
 parser.add_argument('--z_dim', dest='z_dim', type=int, default=100, help='dimension of latent')
-parser.add_argument('--divergence', dest='divergence', default='Jensen-Shannon', help='divergence',
+parser.add_argument('--divergence', dest='divergence', default='Jensen-Shannon',
                     choices=['Kullback-Leibler', 'Reverse-KL', 'Pearson-X2', 'Squared-Hellinger', 'Jensen-Shannon', 'GAN'])
 parser.add_argument('--tricky_G', dest='tricky_G', action='store_true', help='use tricky G loss or not')
-parser.add_argument('--dataset', dest='dataset_name', default='mnist', choices=['mnist', 'celeba'], help='dataset')
+parser.add_argument('--dataset', dest='dataset_name', default='mnist', choices=['mnist', 'celeba'])
 
 args = parser.parse_args()
 
@@ -45,12 +45,12 @@ Dataset, models = utils.get_dataset_models(dataset_name)
 dataset = Dataset(batch_size=batch_size)
 G = models['G']
 D = models['D']
-activation_fn, conjugate_fn = utils.get_divengence_funcs(divergence)
+activation_fn, conjugate_fn = utils.get_divergence_funcs(divergence)
 
 
-# ****************************************************************************
-# *                                   graph                                  *
-# ****************************************************************************
+# ==============================================================================
+# =                                    param                                   =
+# ==============================================================================
 
 # inputs
 real = tf.placeholder(tf.float32, [None, 28, 28, 1])
@@ -88,9 +88,9 @@ g_summary = tl.summary({g_loss: 'g_loss'}, scope='G')
 f_sample = G(z, is_training=False)
 
 
-# ****************************************************************************
-# *                                   train                                  *
-# ****************************************************************************
+# ==============================================================================
+# =                                    train                                   =
+# ==============================================================================
 
 # session
 sess = tl.session()
