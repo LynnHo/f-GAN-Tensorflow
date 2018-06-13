@@ -61,39 +61,3 @@ class DiskImageData(Dataset):
         dataset = disk_image_batch_dataset(img_paths, batch_size, labels, prefetch_batch, drop_remainder, filter,
                                            map_func, num_threads, shuffle, buffer_size, repeat)
         self._bulid(dataset, sess)
-
-
-if __name__ == '__main__':
-    import glob
-
-    import imlib as im
-    import numpy as np
-    import pylib
-
-    paths = glob.glob('/home/hezhenliang/Resource/face/CelebA/origin/origin/processed_by_hezhenliang/align_celeba/img_align_celeba/*.jpg')
-    paths = sorted(paths)[182637:]
-    labels = range(len(paths))
-
-    def filter(x, y, *args):
-        return tf.cond(y > 1, lambda: tf.constant(True), lambda: tf.constant(False))
-
-    def map_func(x, *args):
-        x = tf.image.resize_images(x, [256, 256])
-        x = tf.to_float((x - tf.reduce_min(x)) / (tf.reduce_max(x) - tf.reduce_min(x)) * 2 - 1)
-        return (x,) + args
-
-    # tf.enable_eager_execution()
-
-    s = tf.Session()
-
-    data = DiskImageData(paths, 128, (labels, labels), filter=None, map_func=map_func, shuffle=False, sess=s)
-
-    for _ in range(1000):
-        with pylib.Timer():
-            for i in range(100):
-                b = data.get_next()
-                print(b[1][0])
-                print(b[2][0])
-                im.imshow(np.array(b[0][0]))
-                im.show()
-                # data.reset()

@@ -100,14 +100,3 @@ class Mnist(MemoryData):
 
     def reset(self):
         super(Mnist, self).reset(self.feed_dict)
-
-if __name__ == '__main__':
-    import imlib as im
-    from tflib import session
-    sess = session()
-    mnist = Mnist('/tmp', 5000, repeat=1, sess=sess)
-    for batch in mnist:
-        print(batch['lbl'][-1])
-        im.imshow(batch['img'][-1])
-        im.show()
-    sess.close()
