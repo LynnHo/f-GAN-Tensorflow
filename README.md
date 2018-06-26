@@ -38,7 +38,7 @@ Tensorflow implementation of f-GAN (NIPS 2016) - [f-GAN: Training Generative Neu
     - python 2.7 or 3.6
 
 
-- Example of training
+- Examples of training
     - training
 
         ```console
