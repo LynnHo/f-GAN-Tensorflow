@@ -35,7 +35,7 @@ Tensorflow implementation of f-GAN (NIPS 2016) - [f-GAN: Training Generative Neu
 
 - Prerequisites
     - tensorflow 1.7 or 1.8
-    - python 2.7 or 3.6
+    - python 2.7
 
 
 - Examples of training
